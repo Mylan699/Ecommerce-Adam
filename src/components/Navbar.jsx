@@ -110,7 +110,7 @@ const Navbar = ({ price, qty, setQty }) => {
         <span
           className={`${
             qty > 0 ? "flex" : "hidden"
-          } bg-orange px-2 text-[10px] rounded-[12px] text-white absolute top-0 left-7 md:left-12 md:top-2`}
+          } bg-orange-500 px-2 text-[10px] rounded-[12px] text-white absolute top-0 left-7 md:left-12 md:top-2`}
         >
           {qty}
         </span>
@@ -157,8 +157,8 @@ const Navbar = ({ price, qty, setQty }) => {
               />
             </div>
           </div>
-          <button className="bg-orange text-white mx-5 block rounded-lg py-4 w-[90%] transition-all hover:opacity-50">
-            Checkout
+          <button className="bg-orange-500 text-white mx-5 block rounded-lg py-4 w-[90%] transition-all hover:opacity-50">
+            Payement
           </button>
         </div>
       ) : (
@@ -167,11 +167,11 @@ const Navbar = ({ price, qty, setQty }) => {
             toggleCart ? "hidden" : "block"
           } cart-container transition-all z-10 w-[350px] md:w-[370px] h-[240px] bg-white shadow-2xl rounded-lg py-8 absolute top-[11%] left-3 md:top-[12%] md:left-[65%]`}
         >
-          <p className="pl-5 font-[700]">Cart</p>
+          <p className="pl-5 font-[700]">Panier</p>
           <hr className="my-4" />
           <div className="details flex justify-center mt-14">
             <p className="font-[700] text-darkGrayishBlue">
-              Your cart is empty.
+              Ton panier est vide.
             </p>
           </div>
         </div>
