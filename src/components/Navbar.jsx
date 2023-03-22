@@ -14,7 +14,7 @@ const Navbar = ({ price, qty, setQty }) => {
   const fixedPrice = price.toFixed(2);
 
   const totalPrice = fixedPrice * qty;
-  const totalPriceFixed = totalPrice.toFixed(2);
+  const totalPriceFixed = totalPrice.toFixed(2);l
 
   const toggleHandler = () => {
     setToggle((prev) => !prev);
