@@ -40,7 +40,7 @@ const Navbar = ({ price, qty, setQty }) => {
               className="text-darkGrayishBlue transition-all hover:border-b-4 border-orange hover:pb-[53px] hover:text-black"
               href="#"
             >
-              Collections
+              Collection
             </a>
           </li>
           <li>
@@ -48,7 +48,7 @@ const Navbar = ({ price, qty, setQty }) => {
               className="text-darkGrayishBlue transition-all hover:border-b-4 border-orange hover:pb-[53px] hover:text-black"
               href="#"
             >
-              Men
+              Homme
             </a>
           </li>
           <li>
@@ -56,7 +56,7 @@ const Navbar = ({ price, qty, setQty }) => {
               className="text-darkGrayishBlue transition-all hover:border-b-4 border-orange hover:pb-[53px] hover:text-black"
               href="#"
             >
-              Women
+              Femme
             </a>
           </li>
           <li>
@@ -64,7 +64,7 @@ const Navbar = ({ price, qty, setQty }) => {
               className="text-darkGrayishBlue transition-all hover:border-b-4 border-orange hover:pb-[53px] hover:text-black"
               href="#"
             >
-              About
+              A propos
             </a>
           </li>
           <li>
@@ -90,16 +90,16 @@ const Navbar = ({ price, qty, setQty }) => {
           alt="menu"
         />
         <li>
-          <a href="#">Collections</a>
+          <a href="#">Collection</a>
         </li>
         <li>
-          <a href="#">Men</a>
+          <a href="#">Homme</a>
         </li>
         <li>
-          <a href="#">Women</a>
+          <a href="#">Femme</a>
         </li>
         <li>
-          <a href="#">About</a>
+          <a href="#">A propos</a>
         </li>
         <li>
           <a href="#">Contact</a>
@@ -133,7 +133,7 @@ const Navbar = ({ price, qty, setQty }) => {
             toggleCart ? "hidden" : "block"
           } cart-container transition-all z-10 w-[350px] md:w-[370px] bg-white shadow-2xl rounded-lg py-8 absolute top-[11%] left-3 md:top-[12%] md:left-[65%]`}
         >
-          <p className="pl-5 font-[700]">Cart</p>
+          <p className="pl-5 font-[700]">Panier</p>
           <hr className="my-4" />
           <div className="details flex justify-between px-5">
             <div className="small-img-container mb-4">
@@ -141,7 +141,7 @@ const Navbar = ({ price, qty, setQty }) => {
             </div>
             <div className="text">
               <p className="text-darkGrayishBlue">
-                Fall limited edition sneakers
+                Edition limité de ...
               </p>
               <span className="text-darkGrayishBlue mr-2">${fixedPrice}</span>
               <span className="text-darkGrayishBlue mr-2">x</span>

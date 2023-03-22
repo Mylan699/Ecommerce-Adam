@@ -142,20 +142,18 @@ const Product = ({ price, qty, setQty }) => {
 
         <div className="description p-6 md:basis-1/2 md:py-[40px]">
           <p className="text-orange text-[14px] tracking-widest uppercase font-[700] mb-6">
-            Sneaker company
+            Marque
           </p>
           <h1 className="text-3xl md:text-4xl capitalize font-[700]">
-            Fall limited edition <br /> sneakers
+            Modèle <br /> 
           </h1>
           <p className="hidden md:block text-darkGrayishBlue my-10 leading-7">
-            These low-profile sneakers are your perfect casual wear <br />
-            companion. Featuring a durable rubber outer sole, they'll <br />
-            withstand everything the weather can offer.
+            Description <br />
+            Description <br />
+            Description
           </p>
           <p className="md:hidden text-darkGrayishBlue my-6 leading-7">
-            These low-profile sneakers are your perfect <br /> casual wear
-            companion. Featuring a durable <br /> rubber outer sole, they'll
-            withstand every - thing the br weather can offer.
+            Description <br /> Description <br /> Description
           </p>
 
           <div className="price flex items-center">
@@ -168,7 +166,7 @@ const Product = ({ price, qty, setQty }) => {
             </p>
           </div>
           <p className="hidden md:block line-through text-grayishBlue font-[700] mt-2">
-            $250.00
+            Prix origine
           </p>
 
           <div className="buttons-container flex flex-col md:flex-row mt-8">
@@ -193,7 +191,7 @@ const Product = ({ price, qty, setQty }) => {
                 src={cartIcon}
                 alt="cart-icon"
               />
-              &nbsp;Add to cart
+              &nbsp;ajouter au panier
             </button>
           </div>
         </div>
