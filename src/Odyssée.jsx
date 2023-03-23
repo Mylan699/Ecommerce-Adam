@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function A_propos(props) {
+function Odyssée(props) {
   return (
-    <div>A_propos</div>
+    <div>Odyssée</div>
   )
 }
 
 A_propo.propTypes = {}
 
-export default A_propos
+export default Odyssée
