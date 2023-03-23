@@ -1,26 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
+import Root from "./routes/rootes"
 import "./index.css";
+import Collection from "./Views/Collection";
 import {
     createBrowserRouter,
     RouterProvider,
   } from "react-router-dom";
+import Contact from "./Views/Contact";
 
-
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+//ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Root />,
-      loader: rootLoader,
       children: [
         {
-          path: "team",
-          element: <Team />,
-          loader: teamLoader,
-        },
+        path: "Collection",
+        element: <Collection/>
+    },
+    {
+        path: "Contact",
+        element: <Contact/>
+    },
       ],
     },
   ]);

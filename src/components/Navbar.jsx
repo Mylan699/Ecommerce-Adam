@@ -8,6 +8,8 @@ import smallImg1 from "../assets/image-product-1-thumbnail.jpg";
 import deleteIcon from "../assets/icon-delete.svg";
 import { Link } from 'react-router-dom';
 
+import Bouton from "./button";
+
 const Navbar = ({ price, qty, setQty }) => {
     const [toggle, setToggle] = useState(true);
     const [toggleCart, setToggleCart] = useState(true);
@@ -40,12 +42,7 @@ const Navbar = ({ price, qty, setQty }) => {
                 />
                 <ul className="hidden md:flex space-x-10">
                     <li>
-                        <a
-                            className="text-darkGrayishBlue transition-all hover:border-b-4 border-orange hover:pb-[53px] hover:text-black"
-                            href="#"
-                        >
-                            Collection
-                        </a>
+                        <Bouton path={"Collection"} label={"Collection"}/>
                     </li>
                     <li>
                         <a
@@ -72,12 +69,7 @@ const Navbar = ({ price, qty, setQty }) => {
                         </a>
                     </li>
                     <li>
-                        <a
-                            className="text-darkGrayishBlue transition-all hover:border-b-4 border-orange hover:pb-[53px] hover:text-black"
-                            href="#"
-                        >
-                            Contact
-                        </a>
+                    <Bouton path={"Contact"} label={"Contact"}/>
                     </li>
                 </ul>
             </div>
