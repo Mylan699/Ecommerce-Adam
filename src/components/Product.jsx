@@ -159,7 +159,7 @@ const Product = ({ price, qty, setQty }) => {
           <div className="price flex items-center">
             <span className="text-3xl font-[700] mr-4">${fixedPrice}</span>
             <span className="bg-paleOrange text-orange font-[700] py-1 px-2 rounded-lg">
-              50%
+              - 50%
             </span>
             <p className="md:hidden line-through text-grayishBlue font-[700] translate-x-[100px] mb-2">
               $250.00

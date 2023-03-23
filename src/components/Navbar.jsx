@@ -67,7 +67,7 @@ const Navbar = ({ price, qty, setQty }) => {
                             className="text-darkGrayishBlue transition-all hover:border-b-4 border-orange hover:pb-[53px] hover:text-black"
                             href="#"
                         >
-                            A propos
+                            Odyssée
                         </a>
                     </li>
                     <li>
@@ -101,7 +101,7 @@ const Navbar = ({ price, qty, setQty }) => {
                     <a href="#">Femme</a>
                 </li>
                 <li>
-                    <a href="#">A propos</a>
+                    <a href="#">Odyssée</a>
                 </li>
                 <li>
                     <a href="#">Contact</a>
