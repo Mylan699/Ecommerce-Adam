@@ -29,3 +29,5 @@ export const Register = () => {
         </main>
     )
 }
+
+export default Register

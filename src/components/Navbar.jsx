@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 import cartIcon from "../assets/icon-cart.svg";
 import menuIcon from "../assets/icon-menu.svg";
 import closeIcon from "../assets/icon-close.svg";
 import avatarImg from "../assets/image-avatar.png";
 import smallImg1 from "../assets/image-product-1-thumbnail.jpg";
 import deleteIcon from "../assets/icon-delete.svg";
+import { Link } from 'react-router-dom';
+
 import Bouton from "./button";
 
 const Navbar = ({ price, qty, setQty }) => {
@@ -34,7 +36,7 @@ const Navbar = ({ price, qty, setQty }) => {
                     alt="menu"
                 />
                 <img
-                    className="w-[100%] h-[22px] md:pr-[80px] cursor-pointer"
+                    className="w-[300%] h-[22px] md:pr-[80px] cursor-pointer"
                     src={logo}
                     alt="sneakers-logo"
                 />
@@ -183,7 +185,7 @@ const Navbar = ({ price, qty, setQty }) => {
                     <p className="pl-5  font-[700] text-center">Utilisateurs</p>
                     <div className="flex flex-col items-center">
                         <button className="bg-orange-500 text-white mx-5 block rounded-lg py-4 w-[90%] transition-all hover:opacity-50 ">
-                            Connexion
+                            <Link to="/Register" className="text-white">Connexion</Link>
                         </button>
                         <span className="text-darkGrayishBlue my-2">ou</span>
                         <button className="bg-orange-500 text-white mx-5 block rounded-lg py-4 w-[90%] transition-all hover:opacity-50">
