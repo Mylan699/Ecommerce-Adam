@@ -1,7 +1,7 @@
-import {useState} from "react";
+import React  from "react";
+import {useState} from "react"
 import Navbar from "../components/Navbar"
-import Product from "../components/Product"
-import {Outlet} from "react-router-dom"
+import Product from "../components/Product";
 
 const Root = () => {
 
@@ -10,11 +10,10 @@ const Root = () => {
 
 
   return (
-    <>
-      <Navbar price={price} qty={qty} setQty={setQty}/>
-    <Outlet/>
-      <Product price={price} qty={qty} setQty={setQty}/>
-    </>
+    <React.Fragment >
+    <Navbar price={price} qty={qty} setQty={setQty} />
+    <Product/>
+    </React.Fragment>
   )
 }
 

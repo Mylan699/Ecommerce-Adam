@@ -8,6 +8,7 @@ import {
     RouterProvider,
   } from "react-router-dom";
 import Contact from "./Views/Contact";
+import Product from "./components/Product";
 
 //ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
         path: "Contact",
         element: <Contact/>
     },
+
       ],
     },
   ]);
