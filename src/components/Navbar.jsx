@@ -6,6 +6,8 @@ import closeIcon from "../assets/icon-close.svg";
 import avatarImg from "../assets/image-avatar.png";
 import smallImg1 from "../assets/image-product-1-thumbnail.jpg";
 import deleteIcon from "../assets/icon-delete.svg";
+import { Link } from 'react-router-dom';
+
 
 const Navbar = ({ price, qty, setQty }) => {
     const [toggle, setToggle] = useState(true);
@@ -191,8 +193,9 @@ const Navbar = ({ price, qty, setQty }) => {
                 >
                     <p className="pl-5  font-[700] text-center">Utilisateurs</p>
                     <div className="flex flex-col items-center">
-                        <button className="bg-orange-500 text-white mx-5 block rounded-lg py-4 w-[90%] transition-all hover:opacity-50 ">
-                            Connexion
+                        <button className="bg-orange-500 text-white mx-5 block rounded-lg py-4 w-[90%] transition-all hover:opacity-50 "  >
+                            
+                            <Link to="/Register.jsx" className="text-white">Connexion</Link>
                         </button>
                         <span className="text-darkGrayishBlue my-2">ou</span>
                         <button className="bg-orange-500 text-white mx-5 block rounded-lg py-4 w-[90%] transition-all hover:opacity-50">
