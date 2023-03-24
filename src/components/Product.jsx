@@ -13,7 +13,8 @@ const Product = ({ price, qty, setQty }) => {
 
   const largeImage = products[value].largeImg;
 
-  const fixedPrice = price.toFixed(2);
+  const fixedPrice = price;
+  //le prix on le mult p  r la quantité et apres on le convertie en chaine de caractere pour lafficher en
 
   const totalPrice = fixedPrice * qty;
   const totalPriceFixed = totalPrice.toFixed(2);
