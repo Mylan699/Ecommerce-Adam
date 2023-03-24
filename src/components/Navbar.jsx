@@ -50,12 +50,12 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <a
+                        <NavLink
                             className="text-darkGrayishBlue transition-all hover:border-b-4 border-orange hover:pb-[53px] hover:text-black"
-                            href="#"
+                            to={"/Femme"}
                         >
                             Femme
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
                         <NavLink
@@ -182,7 +182,7 @@ const Navbar = () => {
                     <p className="pl-5  font-[700] text-center">Utilisateurs</p>
                     <div className="flex flex-col items-center">
                         <button className="bg-orange-500 text-white mx-5 block rounded-lg py-4 w-[90%] transition-all hover:opacity-50 ">
-                            <Link to="/Register" className="text-white">Connexion</Link>
+                            <NavLink to="/Register" className="text-white">Connexion</NavLink>
                         </button>
                         <span className="text-darkGrayishBlue my-2">ou</span>
                         <button className="bg-orange-500 text-white mx-5 block rounded-lg py-4 w-[90%] transition-all hover:opacity-50">

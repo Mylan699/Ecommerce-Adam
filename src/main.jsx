@@ -12,6 +12,7 @@ import Contact from "./Views/Contact";
 import Product from "./components/Product";
 import Navbar from "./components/Navbar";
 import { CartProvider } from "./cartProvider";
+import Register from "./components/Register";
 
 //ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 
@@ -26,7 +27,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                     <Route path="/contact" element={<Contact/>}/>
                     <Route path="/odyssée" element={<h1>Odyssée</h1>}/>
                     <Route path="/payment" element={<h1>Payment</h1>}/>
-                    
+                    <Route path="/Register" element={<Register/>}/>
                 </Routes>
             </BrowserRouter>
         </CartProvider>
