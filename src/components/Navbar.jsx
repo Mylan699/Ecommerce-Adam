@@ -6,20 +6,17 @@ import closeIcon from "../assets/icon-close.svg";
 import avatarImg from "../assets/image-avatar.png";
 import smallImg1 from "../assets/image-product-1-thumbnail.jpg";
 import deleteIcon from "../assets/icon-delete.svg";
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 import Bouton from "./button";
+import { useCartContext } from "../cartProvider";
 
-const Navbar = ({ price, qty, setQty }) => {
+const Navbar = () => {
     const [toggle, setToggle] = useState(true);
     const [toggleCart, setToggleCart] = useState(true);
     const [toggleLogin, setToggleLogin] = useState(true);
-
-
-    const fixedPrice = price.toFixed(2);
-
-    const totalPrice = fixedPrice * qty;
-    const totalPriceFixed = totalPrice.toFixed(2);
+    const {cart, removeProductFromCart} = useCartContext()
+    const navigate = useNavigate();
 
     const toggleHandler = () => {
         setToggle((prev) => !prev);
@@ -45,12 +42,12 @@ const Navbar = ({ price, qty, setQty }) => {
                         <Bouton path={"Collection"} label={"Collection"}/>
                     </li>
                     <li>
-                        <a
+                        <NavLink
                             className="text-darkGrayishBlue transition-all hover:border-b-4 border-orange hover:pb-[53px] hover:text-black"
-                            href="#"
+                            to={"/"}
                         >
                             Homme
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
                         <a
@@ -61,12 +58,12 @@ const Navbar = ({ price, qty, setQty }) => {
                         </a>
                     </li>
                     <li>
-                        <a
+                        <NavLink
                             className="text-darkGrayishBlue transition-all hover:border-b-4 border-orange hover:pb-[53px] hover:text-black"
-                            href="#"
+                            to={"/odyssée"}
                         >
                             Odyssée
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
                     <Bouton path={"Contact"} label={"Contact"}/>
@@ -103,10 +100,10 @@ const Navbar = ({ price, qty, setQty }) => {
 
             <div className="right flex space-x-5 md:space-x-10 items-center relative">
                 <span
-                    className={`${qty > 0 ? "flex" : "hidden"
+                    className={`${cart.quantity > 0 ? "flex" : "hidden"
                         } bg-orange-500 px-2 text-[10px] rounded-[12px] text-white absolute top-0 left-7 md:left-12 md:top-2`}
                 >
-                    {qty}
+                    {cart.quantity}
                 </span>
                 <img
                     onClick={() => setToggleCart((prev) => !prev)}
@@ -126,7 +123,7 @@ const Navbar = ({ price, qty, setQty }) => {
 
 
             {
-                qty !== 0 ? (
+                cart.quantity ? (
                     <div
                         className={`${toggleCart ? "hidden" : "block"
                             } cart-container transition-all z-10 w-[350px] md:w-[370px] bg-white shadow-2xl rounded-lg py-8 absolute top-[11%] left-3 md:top-[12%] md:left-[65%]`}
@@ -141,21 +138,21 @@ const Navbar = ({ price, qty, setQty }) => {
                                 <p className="text-darkGrayishBlue">
                                     Edition limité de ...
                                 </p>
-                                <span className="text-darkGrayishBlue mr-2">${fixedPrice}</span>
+                                <span className="text-darkGrayishBlue mr-2">{cart.priceWithReduc}€</span>
                                 <span className="text-darkGrayishBlue mr-2">x</span>
-                                <span className="text-darkGrayishBlue mr-2">{qty}</span>
-                                <span className="font-[700]">${totalPriceFixed}</span>
+                                <span className="text-darkGrayishBlue mr-2">{cart.quantity}</span>
+                                <span className="font-[700]">{parseFloat(cart.priceWithReduc) * cart.quantity}€</span>
                             </div>
                             <div className="remove-container">
                                 <img
-                                    onClick={() => setQty(0)}
+                                    onClick={removeProductFromCart}
                                     className="h-[20px] mt-3 cursor-pointer"
                                     src={deleteIcon}
                                     alt="remove-from-cart"
                                 />
                             </div>
                         </div>
-                        <button className="bg-orange-500 text-white mx-5 block rounded-lg py-4 w-[90%] transition-all hover:opacity-50">
+                        <button className="bg-orange-500 text-white mx-5 block rounded-lg py-4 w-[90%] transition-all hover:opacity-50" onClick={()=> navigate("/payment")}>
                             Payement
                         </button>
                     </div>

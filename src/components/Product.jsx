@@ -4,10 +4,27 @@ import closeIcon from "../assets/icon-close-white.svg";
 import prevIcon from "../assets/icon-previous.svg";
 import nextIcon from "../assets/icon-next.svg";
 import { data } from "../constants/images";
+import { useCartContext } from "../cartProvider";
 
 const Product = ({ price, qty, setQty }) => {
   const products = [...data];
   const [value, setValue] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCartContext()
+  const product = {
+    name: "sneakers EL",
+    priceWithReduc: "100",
+    priceWithoutReduc: "200",
+    marque: "Odyssée"
+  }
+
+  function incressQuanty() {
+    setQuantity(quantity + 1);
+  }
+
+  function decreaseQuantity() {
+    setQuantity(quantity - 1);
+  }
 
   const [modal, setModal] = useState(true);
 
@@ -41,6 +58,10 @@ const Product = ({ price, qty, setQty }) => {
       ? setValue(products.length - 1)
       : setValue((prev) => prev + 1);
   };
+
+  function buyProduct() {
+      addToCart(product, quantity)
+  }
 
   return (
     <main>
@@ -90,9 +111,8 @@ const Product = ({ price, qty, setQty }) => {
         </div>
 
         <div
-          className={`${
-            modal ? "hidden" : "hidden md:block"
-          } absolute -top-[20%] right-0 -bottom-[20%] left-0 bg-lightBlack`}
+          className={`${modal ? "hidden" : "hidden md:block"
+            } absolute -top-[20%] right-0 -bottom-[20%] left-0 bg-lightBlack`}
         >
           <div
             className={
@@ -143,50 +163,39 @@ const Product = ({ price, qty, setQty }) => {
 
         <div className="description p-6 md:basis-1/2 md:py-[40px]">
           <p className="text-orange text-[14px] tracking-widest uppercase font-[700] mb-6">
-            Marque
+            {product.marque}
           </p>
           <h1 className="text-3xl md:text-4xl capitalize font-[700]">
-            Modèle <br /> 
+            {product.name} <br />
           </h1>
-          <p className="hidden md:block text-darkGrayishBlue my-10 leading-7">
-            Description <br />
-            Description <br />
-            Description
-          </p>
-          <p className="md:hidden text-darkGrayishBlue my-6 leading-7">
-            Description <br /> Description <br /> Description
-          </p>
 
           <div className="price flex items-center">
-            <span className="text-3xl font-[700] mr-4">${fixedPrice}</span>
+            <span className="text-3xl font-[700] mr-4">{product.priceWithoutReduc}€</span>
             <span className="bg-paleOrange text-orange font-[700] py-1 px-2 rounded-lg">
               - 50%
             </span>
-            <p className="md:hidden line-through text-grayishBlue font-[700] translate-x-[100px] mb-2">
-              $250.00
-            </p>
           </div>
-          <p className="hidden md:block line-through text-grayishBlue font-[700] mt-2">
-            Prix origine
+          <p className="hidden md:block ext-grayishBlue font-[700] mt-2">
+            {product.priceWithReduc}€
           </p>
 
           <div className="buttons-container flex flex-col md:flex-row mt-8">
             <div className="state w-[100%] flex justify-around md:justify-center items-center space-x-10 bg-lightGrayishBlue rounded-lg p-3 md:p-2 md:mr-4 md:w-[150px]">
               <button
-                onClick={decrease}
+                onClick={decreaseQuantity}
                 className="minus text-[24px] md:text-[20px] font-[700] text-orange transition-all hover:opacity-50"
               >
                 -
               </button>
-              <p className="md:text-[14px] font-bold">{qty}</p>
+              <p className="md:text-[14px] font-bold">{quantity}</p>
               <button
-                onClick={() => setQty((prev) => prev + 1)}
+                onClick={incressQuanty}
                 className="plus text-[24px] md:text-[20px] font-[700] text-orange transition-all hover:opacity-50"
               >
                 +
               </button>
             </div>
-            <button className="add-btn border-none bg-orange-500 rounded-lg text-white font-[700] px-[70px] py-[18px] mt-4 md:mt-0 md:py-0 md:text-[14px] transition-all btn-shadow hover:opacity-50">
+            <button className="add-btn border-none bg-orange-500 rounded-lg text-white font-[700] px-[70px] py-[18px] mt-4 md:mt-0 md:py-0 md:text-[14px] transition-all btn-shadow hover:opacity-50" onClick={buyProduct}>
               <img
                 className="inline-block -translate-x-2 -translate-y-[2px] h-[15px]"
                 src={cartIcon}
